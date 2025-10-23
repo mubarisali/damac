@@ -1,0 +1,1411 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}DAMAC Island 2{% endblock %}
+
+{% block content %}
+
+<!-- Hero Start -->
+<section id="hero" class="hero" style="background-image: url('{% static 'img/islandhero.webp' %}');">
+    <div class="hero-overlay">
+        <div class="hero-box">
+            <p class="overlap-label">DAMAC ISLAND 2</p>
+            <h2 class="overlap-title">WHERE SERENITY MEETS SOPHISTICATION</h2>
+            <h3 class="overlap-subtitle">EVERY DAY FEELS LIKE A GETAWAY & DUBAILAND</h3>
+
+            <div class="hero-buttons">
+                <a href="javascript:void(0);" class="btn-outline" onclick="showForm()">GET AN INSTANT CALL BACK</a>
+                <a href="javascript:void(0);" class="btn-outline" onclick="showForm()">
+                    <span class="icon">⬇</span> DOWNLOAD BROCHURE
+                </a>
+            </div>
+
+            <p class="overlap-text">
+            Experience a one-of-a-kind community inspired by the world’s finest tropical island destinations,
+            where modern design meets timeless elegance. Discover luxurious waterfront townhouses and villas.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+     @font-face {
+        font-family: 'Termina';
+        src: url('https://fonts.cdnfonts.com/s/18544/TerminaTest-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, a, div, section, input, select, textarea, button, span {
+        font-family: 'Termina', sans-serif !important;
+    }
+    /* Hero Section Styling */
+    .hero {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .hero-box {
+        background: rgba(255, 255, 255, 0.22);
+        padding: 50px 60px;
+        border-radius: 16px;
+        max-width: 1200px;
+        width: 100%;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #000;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Typography */
+    .overlap-label {
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: #555;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    .overlap-title {
+        font-family: 'Termina', 'Montserrat', 'Avenir Next', sans-serif;
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .overlap-subtitle {
+        font-size: 18px;
+        font-weight: 400;
+        color: #000;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    .overlap-text {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #444;
+        margin-top: 20px;
+        font-weight: 500;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .hero-buttons a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline {
+        border: 2px solid #fff;
+        color: #222222;
+        background: #fff;
+    }
+
+    .btn-outline:hover {
+        background: #d4af37;
+        color: #222222;
+        border-color: #d4af37;
+    }
+
+    /* Responsive - Tablet */
+    @media (max-width: 1024px) {
+        .hero {
+            padding: 60px 20px;
+        }
+
+        .hero-box {
+            padding: 40px 30px;
+        }
+
+        .overlap-title {
+            font-size: 32px;
+        }
+
+        .overlap-subtitle {
+            font-size: 16px;
+        }
+    }
+
+    /* Responsive - Mobile */
+    @media (max-width: 768px) {
+        .hero {
+            height: auto;
+            min-height: 100vh;
+            padding: 40px 15px;
+        }
+
+        .hero-overlay {
+            padding: 15px;
+        }
+
+        .hero-box {
+            padding: 30px 20px;
+        }
+
+        .overlap-label {
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .overlap-title {
+            font-size: 22px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .overlap-title br {
+            display: none;
+        }
+
+        .overlap-subtitle {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .overlap-text {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .hero-buttons a {
+            width: 100%;
+            justify-content: center;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Responsive - Small Mobile */
+    @media (max-width: 480px) {
+        .hero {
+            padding: 30px 10px;
+            min-height: 100vh;
+        }
+
+        .hero-box {
+            padding: 25px 15px;
+        }
+
+        .overlap-label {
+            font-size: 10px;
+        }
+
+        .overlap-title {
+            font-size: 18px;
+        }
+
+        .overlap-subtitle {
+            font-size: 12px;
+        }
+
+        .overlap-text {
+            font-size: 12px;
+        }
+
+        .hero-buttons a {
+            padding: 10px 15px;
+            font-size: 0.85rem;
+        }
+
+        .btn-outline .icon {
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 375px) {
+        .hero {
+            padding: 25px 10px;
+        }
+
+        .hero-box {
+            padding: 20px 12px;
+        }
+
+        .overlap-title {
+            font-size: 16px;
+        }
+
+        .overlap-subtitle {
+            font-size: 11px;
+        }
+
+        .overlap-text {
+            font-size: 11px;
+        }
+    }
+</style>
+<!-- 🌇 Office Spaces Section Start -->
+<section id="office-spaces" class="office-section">
+    <div class="container">
+        <div class="office-header text-center">
+            <h2 class="section-title">PARADISE FINDS A HOME</h2>
+            <p class="section-subtitle">
+                Escape to DAMAC Island 2 – Seychelles, where paradise becomes a way of life. Inspired by the world’s
+                most beautiful
+                tropical destinations, this island retreat blends lush greenery, tranquil lagoons, and refined
+                architecture.DAMAC Islands is a place where paradise is a state of mind, a lifestyle that brings the
+                serene rhythm of island living
+                to the heart of Dubai. DAMAC Islands is inspired by the world’s most beautiful tropical destinations,
+                offering a retreat
+                that merges lush landscapes with urban sophistication.
+
+                Here, DAMAC Islands townhouses and luxury villas open to breathtaking views of lagoons and greenery,
+                blurring the
+                boundaries between indoors and nature. DAMAC Seychelles is where each day feels like an escape, making
+                paradise an
+                everyday reality.
+            </p>
+        </div>
+
+        <div class="office-content">
+            <div class="office-box">
+                <h3>TOWNHOUSES & VILLAS </h3>
+                <p> INR <span>6.6 CRORES*</span></p>
+            </div>
+
+            <div class="office-box">
+                <h3>PAYMENT PLAN</h3>
+                <p><span>75/25</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 🌇 Office Spaces Section End -->
+
+<!-- 🌇 Office Spaces CSS -->
+
+<style>
+    .office-section {
+        padding: 80px 20px;
+        background: #e0f2ff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .office-section::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background: rgba(218, 165, 32, 0.1);
+        border-radius: 50%;
+        filter: blur(80px);
+    }
+
+    .office-section .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: #222;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.15rem;
+        color: #555;
+        line-height: 1.9;
+        margin-bottom: 60px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
+    }
+
+    .office-content {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .office-box {
+        background: #fff;
+        border-radius: 20px;
+        padding: 40px 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        flex: 1 1 320px;
+        max-width: 480px;
+    }
+
+    .office-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .office-box h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .office-box p {
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .office-box span {
+        font-weight: 700;
+        color: #b89636;
+    }
+
+    @media (max-width: 768px) {
+        .office-section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .office-box {
+            max-width: 100%;
+        }
+    }
+</style>
+<section id="community-amenities" class="community-amenities">
+    <div class="container">
+        <!-- Left Side: Image -->
+        <div class="image">
+            <img src="{% static 'img/island-bg2.webp' %}" alt="Community Amenities">
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="content">
+            <h2 class="section-title">INTERNATIONAL STANDARD
+            Amenities</h2>
+            <p>
+                Explore breathtaking images that highlight Damac Islands Phase 2's architecture, way of life, and natural beauty. Every
+                picture depicts a life of luxury, from opulent homes to expansive island vistas.
+            </p>
+
+            <!-- Carousel -->
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <div class="carousel-row">
+                        <div class="amenity-card">Private Boat Rides</div>
+                        <div class="amenity-card">Gymnasium And Fitness Ceter</div>
+                        <div class="amenity-card">Yoga And Sun Decks</div>
+                    </div>
+
+                    <div class="carousel-row">
+                        <div class="amenity-card">Paddling</div>
+                        <div class="amenity-card">Swimming Pools</div>
+                        <div class="amenity-card">Mini Golf Island</div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-row">
+                        <div class="amenity-card">Wedding Venue</div>
+                        <div class="amenity-card">Jungle River</div>
+                        <div class="amenity-card">Lagoon Tour In Hammock</div>
+                    </div>
+
+                    <!-- <div class="carousel-row">
+                        <div class="amenity-card">Organic Pool</div>
+                        <div class="amenity-card">Outdoor Calisthenics</div>
+                        <div class="amenity-card">Padel Courts</div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="carousel-slide">
+                    <div class="carousel-row">
+                        <div class="amenity-card">Sensory Deprivation Tank</div>
+                        <div class="amenity-card">Cloud Zen Lounge</div>
+                        <div class="amenity-card">Red Light Therapy</div>
+                    </div>
+
+                    <div class="carousel-row">
+                        <div class="amenity-card">Indoor Co-Working Space</div>
+                        <div class="amenity-card">Indoor Golf Simulator</div>
+                        <div class="amenity-card">Gaming Lounge</div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-row">
+                        <div class="amenity-card">Gym & AI Training Lab</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ========== Layout ========== */
+    .community-amenities {
+        padding: 80px 20px;
+        background: radial-gradient(circle at top left, #f9fafb, #e9ecef);
+        display: flex;
+        justify-content: center;
+    }
+
+    .community-amenities .container {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+        gap: 60px;
+    }
+
+    .community-amenities .image img {
+        width: 100%;
+        max-width: 450px;
+        height: 550px;
+        border-radius: 24px;
+        object-fit: cover;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transition: transform 0.6s ease;
+    }
+
+    .community-amenities .image img:hover {
+        transform: scale(1.03);
+    }
+
+    /* ========== Content ========== */
+    .community-amenities .content {
+        flex: 1;
+    }
+
+    .community-amenities h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 20px;
+    }
+
+    .community-amenities p {
+        color: #444;
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+    }
+
+    /* ========== Carousel ========== */
+    .carousel {
+        position: relative;
+        min-height: 200px;
+    }
+
+    .carousel-slide {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    .carousel-slide.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .carousel-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .amenity-card {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 25px;
+        font-weight: 600;
+        color: #222;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .amenity-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 900px) {
+        .community-amenities {
+            padding: 60px 20px;
+        }
+
+        .community-amenities .container {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .community-amenities .image img {
+            max-width: 100%;
+            height: 400px;
+        }
+
+        .carousel-row {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.carousel-slide');
+        let idx = 0;
+        slides[idx].classList.add('active');
+
+        setInterval(() => {
+            slides[idx].classList.remove('active');
+            idx = (idx + 1) % slides.length;
+            slides[idx].classList.add('active');
+        }, 2000);
+    });
+</script>
+
+
+
+
+<!-- 🖼️ Gallery Start -->
+<div id="gallery" class="modern-gallery">
+    <div class="gallery-container">
+        <div class="gallery-title">
+            <h2 class="section-title"> NATURE MEETS LUXURY</h2>
+           
+        </div>
+
+        <!-- ✅ GALLERY GRID -->
+        <div class="gallery-grid">
+            <div class="gallery-item" data-label="District View">
+                <img src="{% static 'img/island-gallery1.webp' %}" alt="Gallery 1">
+            </div>
+            <div class="gallery-item" data-label="Luxury Interior">
+                <img src="{% static 'img/island-gallery2.webp' %}" alt="Gallery 2">
+            </div>
+            <div class="gallery-item" data-label="Skyline Living">
+                <img src="{% static 'img/island-gallery3.webp' %}" alt="Gallery 3">
+            </div>
+            <div class="gallery-item" data-label="Modern Architecture">
+                <img src="{% static 'img/island-gallery4.webp' %}" alt="Gallery 4">
+            </div>
+            <div class="gallery-item" data-label="Exclusive Lounge">
+                <img src="{% static 'img/island-gallery5.webp' %}" alt="Gallery 5">
+            </div>
+            <div class="gallery-item" data-label="Serene Landscape">
+                <img src="{% static 'img/hh.webp' %}" alt="Gallery 6">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ POPUP LIGHTBOX -->
+<div class="gallery-popup" id="galleryPopup">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <img id="popupImg" src="" alt="">
+    <div class="popup-label" id="popupLabel"></div>
+</div>
+
+
+<!-- 🖼️ Gallery End -->
+
+<style>
+    /* ========== BASE STYLES ========== */
+    .modern-gallery {
+        background: #ffffff;
+        padding: 80px 20px;
+        overflow: hidden;
+    }
+
+    .gallery-container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .gallery-title {
+        text-align: center;
+    }
+
+    .gallery-title h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 1rem;
+    }
+
+    .gallery-title p {
+        color: #555;
+        font-size: 1.1rem;
+        max-width: 680px;
+        margin: 0 auto 4rem auto;
+        line-height: 1.8;
+    }
+
+    /* ========== GRID ========== */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 260px;
+        gap: 25px;
+    }
+
+    .gallery-item {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item.large {
+        grid-row: span 2;
+    }
+
+    .gallery-item.wide {
+        grid-column: span 2;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.9);
+        transition: all 0.8s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.15);
+        filter: brightness(1) contrast(1.05);
+    }
+
+    .gallery-item::after {
+        content: attr(data-label);
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.9);
+        color: #222;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-radius: 30px;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.4s ease;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ========== POPUP STYLES ========== */
+    .gallery-popup {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        animation: fadeIn 0.3s ease;
+        padding: 20px;
+    }
+
+    .gallery-popup img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+        object-fit: contain;
+    }
+
+    .popup-label {
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 10px 25px;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 40px;
+        right: 60px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 10000;
+    }
+
+    .close-btn:hover {
+        color: #ffcc00;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .modern-gallery {
+            padding: 60px 20px;
+        }
+
+        .gallery-title h2 {
+            font-size: 2rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+            grid-auto-rows: 250px;
+            gap: 20px;
+        }
+
+        .gallery-item.large {
+            grid-row: span 1;
+        }
+
+        .gallery-item.wide {
+            grid-column: span 1;
+        }
+
+        .gallery-popup {
+            padding: 15px;
+        }
+
+        .gallery-popup img {
+            max-width: 95%;
+            max-height: 75%;
+        }
+
+        .popup-label {
+            font-size: 1rem;
+            padding: 8px 20px;
+        }
+
+        .close-btn {
+            right: 20px;
+            top: 20px;
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<script>
+    /* ✅ JavaScript for Popup */
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const popup = document.getElementById('galleryPopup');
+    const popupImg = document.getElementById('popupImg');
+    const popupLabel = document.getElementById('popupLabel');
+    const closePopup = document.getElementById('closePopup');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.querySelector('img').src;
+            const label = item.getAttribute('data-label');
+            popupImg.src = imgSrc;
+            popupLabel.textContent = label;
+            popup.style.display = 'flex';
+        });
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    popup.addEventListener('click', e => {
+        if (e.target === popup) popup.style.display = 'none';
+    });
+</script>
+
+<section id="location-section" style="background-image: url('{% static 'img/island-location.webp' %}');">
+    <div class="overlay"></div>
+
+    <div class="container">
+        <!-- LEFT: Location Info -->
+        <div class="location-box">
+            <h2 class="section-title">LOCATION</h2>
+            <p class="section-subtitle">
+                Dubailand is the ideal retreat for those looking to reconnect with nature and escape the city's hustle
+                and bustle.
+                This beautiful community offers convenient access to key roads, major highways, and is just a short
+                distance
+                from Al Maktoum International Airport. With the DAMAC Islands handover date approaching, your
+                opportunity to own
+                a piece of island-inspired paradise is closer than ever.
+            </p>
+
+            <p class="section-subtitle">
+                What makes this location special is how it blends island-style luxury with city accessibility. Instead
+                of being
+                isolated, the site of DAMAC Island 2 places you in a master-planned community that offers resort-like
+                amenities
+                (lagoons, beaches, leisure zones) while being just a drive away from the pulse of Dubai.
+            </p>
+
+            <p class="section-subtitle">
+                This location offers residents a rare combination of tranquility and connectivity — you’re nestled
+                within a green,
+                resort-style community while remaining linked to Dubai’s major arteries and hubs.
+            </p>
+        </div>
+
+        <!-- RIGHT: Landmarks -->
+        <div class="landmarks-box">
+            <h3 style="font-size: 32px;">FAMOUS LANDMARKS NEARBY</h3>
+
+            <div class="landmark-item">
+                <div class="icon-circle">
+                    <img src="{% static 'img/sport_city-removebg-preview.png' %}" alt="Dubai Sports City">
+                </div>
+                <div>
+                    <h4>DUBAI SPORTS CITY</h4>
+                    <p>15-MINUTE DRIVE</p>
+                </div>
+            </div>
+
+            <div class="landmark-item">
+                <div class="icon-circle">
+                    <img src="{% static 'img/expo-removebg-preview.png' %}" alt="Expo 2020 Venue">
+                </div>
+                <div>
+                    <h4>EXPO 2020 VENUE</h4>
+                    <p>20-MINUTE DRIVE</p>
+                </div>
+            </div>
+
+            <div class="landmark-item">
+                <div class="icon-circle">
+                    <img src="{% static 'img/BURJ.png' %}" alt="Burj Al Arab">
+                </div>
+                <div>
+                    <h4>BURJ AL ARAB</h4>
+                    <p>30-MINUTE DRIVE</p>
+                </div>
+            </div>
+
+            <div class="landmark-item">
+                <div class="icon-circle">
+                    <img src="{% static 'img/investment_park-removebg-preview.png' %}" alt="Dubai Investment Park">
+                </div>
+                <div>
+                    <h4>DUBAI INVESTMENT PARK</h4>
+                    <p>30-MINUTE DRIVE</p>
+                </div>
+            </div>
+
+            <div class="landmark-item">
+                <div class="icon-circle">
+                    <img src="{% static 'img/AIRPORT-removebg-preview (1).png' %}" alt="Dubai International Airport">
+                </div>
+                <div>
+                    <h4>DUBAI INTERNATIONAL AIRPORT</h4>
+                    <p>40-MINUTE DRIVE</p>
+                </div>
+            </div>
+
+            <div class="landmark-item">
+                <div class="icon-circle">
+                    <img src="{% static 'img/AIRPORT-removebg-preview (1).png' %}" alt="Al Maktoum Airport">
+                </div>
+                <div>
+                    <h4>AL MAKTOUM INTERNATIONAL AIRPORT</h4>
+                    <p>23-MINUTE DRIVE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Universal font for this section */
+    #location-section,
+    #location-section * {
+        font-family: 'Termina', 'Montserrat', 'Avenir Next', 'Futura', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* Background and overlay */
+    #location-section {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        padding: 80px 20px;
+        color: #000;
+    }
+
+    #location-section .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.92);
+    }
+
+    /* Grid Layout */
+    #location-section .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .location-box,
+    .landmarks-box {
+        background: transparent;
+        border: none;
+        padding: 30px;
+    }
+
+    /* Headings */
+    .section-title {
+        font-size: 36px;
+        color: #222;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .landmarks-box h3 {
+        font-size: 1.625rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 24px;
+    }
+
+    /* Paragraphs */
+    .section-subtitle {
+        font-size: 1rem;
+        color: #000;
+        line-height: 1.9;
+        margin-bottom: 24px;
+        text-align: justify;
+    }
+
+    /* Landmark Items */
+    .landmark-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: #fafafa;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .landmark-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Smaller GOLD ICON STYLE */
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1.6px solid #c6a24a;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+.location-box h2,
+    .landmarks-box h3 {
+        font-size: 32 px;
+        font-weight: 700;
+        color: #222222;
+        margin-bottom: 24px;
+    }
+    .icon-circle img {
+        width: 28px;
+        height: 28px;
+        filter: brightness(0) saturate(100%) invert(75%) sepia(31%) saturate(521%) hue-rotate(12deg) brightness(95%) contrast(88%);
+    }
+
+    .icon-circle:hover {
+        box-shadow: 0 0 8px rgba(198, 162, 74, 0.4);
+        transform: scale(1.05);
+    }
+
+    /* Landmark Text */
+    .landmark-item h4 {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 3px;
+        color: #222;
+    }
+
+    .landmark-item p {
+        font-size: 12px;
+        color: #777;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+        #location-section {
+            padding: 60px 20px;
+        }
+
+        #location-section .container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .location-box,
+        .landmarks-box {
+            padding: 20px;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+        }
+
+        .icon-circle img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+</style>
+
+
+<section id="sales-form-section" class="contact-section">
+    <div class="contact-container">
+
+        <!-- LEFT SIDE -->
+        <div class="contact-left">
+            <div class="contact-left-content">
+                <h2>Book Your Dream Apartment Today</h2>
+                <p>Experience luxury living — 24x7 Sales Office assistance available.</p>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-right">
+            <form class="lead-form" action="https://api.web3forms.com/submit" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="access_key" value="6ba4ddc2-a6f7-4330-848d-1eb2d72a5cdc">
+
+                <div class="form-group">
+                    <label>Title *</label>
+                    <select name="title" required>
+                        <option value="">Select</option>
+                        <option>Mr</option>
+                        <option>Ms</option>
+                        <option>Mrs</option>
+                        <option>Dr</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="first_name" placeholder="Enter First Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="last_name" placeholder="Enter Last Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" placeholder="Enter Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input id="phone" type="tel" name="phone" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Comments</label>
+                    <textarea name="comments" placeholder="Enter your comments"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Get a Call Back!</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Intl Tel Input -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+<script>
+    // Initialize phone input
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "in",
+        preferredCountries: ["in", "ae", "us", "gb", "sa", "pk", "qa"],
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+    });
+</script>
+
+<style>
+    @font-face {
+        font-family: 'Termina';
+        src: url('https://fonts.cdnfonts.com/s/18544/TerminaTest-Bold.woff') format('woff');
+    }
+
+    .contact-section {
+        background: linear-gradient(120deg, #f8f9fb, #eef1f7);
+        padding: 80px 20px;
+        font-family: 'Termina', sans-serif;
+    }
+
+    .contact-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 60px;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 50px;
+    }
+
+    /* LEFT SIDE */
+    .contact-left {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-left-content {
+        max-width: 400px;
+    }
+
+    .contact-left-content h2 {
+        font-size: 34px;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .contact-left-content p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 0;
+    }
+
+    /* RIGHT SIDE (FORM) */
+    .contact-right {
+        flex: 1;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .lead-form label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #222;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .lead-form input,
+    .lead-form select,
+    .lead-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        font-family: 'Termina', sans-serif;
+    }
+
+    .lead-form input:focus,
+    .lead-form select:focus,
+    .lead-form textarea:focus {
+        border-color: #000;
+        outline: none;
+    }
+
+    .iti {
+        width: 100%;
+    }
+
+    textarea {
+        height: 100px;
+        resize: none;
+        display: block;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: #fff;
+        color: #222222;
+        border: 2px solid #222222;
+        border-radius: 8px;
+        font-weight: 700;
+        font-family: 'Termina', sans-serif;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+        background: #d4af37;
+        border: 2px solid var(--gold);
+    }
+
+    @media (max-width: 900px) {
+        .contact-section {
+            padding: 60px 20px;
+        }
+
+        .contact-container {
+            flex-direction: column;
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .contact-left,
+        .contact-right {
+            width: 100%;
+        }
+
+        .contact-left-content {
+            margin-bottom: 30px;
+        }
+
+        .contact-left-content h2 {
+            font-size: 28px;
+        }
+
+        .contact-left-content p {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<!-- js for reset the form -->
+<script>
+    function showForm() {
+        document.getElementById('priceForm').style.display = 'flex';
+        const form = document.querySelector('#priceForm form');
+        if (form) form.reset();
+    }
+
+    function closeForm() {
+        document.getElementById('priceForm').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('form[action="https://api.web3forms.com/submit"]');
+        forms.forEach(form => {
+            form.addEventListener('submit', function () {
+                setTimeout(() => form.reset(), 100);
+            });
+        });
+    });
+</script>
+
+<!-- js for reset the form -->
+{% endblock %}

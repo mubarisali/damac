@@ -1,0 +1,814 @@
+/* Termina font (regular + bold) */
+@font-face {
+    font-family: "Termina";
+    src: url("{% static 'fonts/termina/Termina-Regular.woff2' %}") format("woff2"),
+    url("{% static 'fonts/termina/Termina-Regular.woff' %}") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Termina";
+    src: url("{% static 'fonts/termina/Termina-Bold.woff2' %}") format("woff2"),
+    url("{% static 'fonts/termina/Termina-Bold.woff' %}") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+.font-termina {
+    font-family: "Termina", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .your-class {
+        /* Replace with the class of the section you're working on */
+        text-align: center;
+        padding: 10px;
+    }
+
+    .call-back-button,
+    .download-brochure-button {
+        /* Buttons */
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Adjust font sizes */
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Adjust the WhatsApp and Email buttons */
+    .whatsapp-button,
+    .email-button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        margin: 10px;
+        width: 100%;
+        /* Make buttons stack vertically */
+        text-align: center;
+        /* Center the text inside the button */
+    }
+}
+
+
+/* ============================================
+   COMPREHENSIVE RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* ===== HERO SECTION ===== */
+@media (max-width: 1400px) {
+    .hero-svg {
+        left: 70rem;
+        height: 9rem;
+        width: 7.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-svg {
+        left: 60rem;
+        height: 8rem;
+        width: 7rem;
+    }
+
+    .heading-termina {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 992px) {
+    #hero {
+        height: 80vh;
+    }
+
+    .hero-svg {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.5rem;
+        height: 7rem;
+        width: 6rem;
+    }
+
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .heading-termina {
+        font-size: 22px;
+    }
+
+    .hero-content p {
+        font-size: 1rem !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        height: 70vh;
+    }
+
+    .heading-termina {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-buttons a {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        height: 60vh;
+    }
+
+    .hero-svg {
+        height: 5rem;
+        width: 4.5rem;
+    }
+
+    .heading-termina {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* ===== PROJECT SECTION ===== */
+@media (max-width: 1400px) {
+    #project-section .container {
+        max-width: 1200px;
+        padding: 0 40px;
+    }
+
+    .project-layout {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    #project-section {
+        padding: 60px 0;
+    }
+
+    .project-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .project-left,
+    .project-right {
+        text-align: center;
+    }
+
+    .project-right {
+        padding: 0 20px;
+    }
+
+    .project-right h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #project-section {
+        padding: 40px 0;
+    }
+
+    #project-section .container {
+        padding: 0 20px;
+    }
+
+    .project-left h3 {
+        font-size: 18px;
+    }
+
+    .project-left p {
+        font-size: 18px;
+    }
+
+    .project-right h2 {
+        font-size: 1.25rem;
+    }
+
+    .project-right p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-left h3 {
+        font-size: 16px;
+    }
+
+    .project-left p {
+        font-size: 16px;
+    }
+
+    .project-right h2 {
+        font-size: 1.1rem;
+    }
+
+    .know-more-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+/* ===== SERVICES SECTION (WHY DAMAC) ===== */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .services-hero-card {
+        height: 400px;
+    }
+
+    .services-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 60px 0;
+    }
+
+    .services-header h2 {
+        font-size: 28px !important;
+    }
+
+    .services-header p {
+        font-size: 16px !important;
+    }
+
+    .services-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 20px !important;
+    }
+
+    .service-card p {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-header h2 {
+        font-size: 24px !important;
+    }
+
+    .services-header p {
+        font-size: 14px !important;
+    }
+
+    .service-card .icon svg,
+    .service-card .icon .icon-svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-card h3 {
+        font-size: 18px !important;
+    }
+}
+
+/* ===== COMMUNITY AMENITIES SECTION ===== */
+@media (max-width: 1200px) {
+    .community-amenities {
+        padding: 60px 30px;
+    }
+
+    .community-amenities .container {
+        gap: 40px;
+    }
+
+    .community-amenities h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .community-amenities .container {
+        flex-direction: column;
+    }
+
+    .community-amenities .image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .community-amenities .image img {
+        max-width: 100%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .community-amenities {
+        padding: 40px 20px;
+    }
+
+    .community-amenities h2 {
+        font-size: 32px !important;
+    }
+
+    .community-amenities p {
+        font-size: 15px !important;
+    }
+
+    .community-amenities .image img {
+        height: 350px;
+    }
+
+    .animated-boxes .box-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .animated-boxes .box-item {
+        font-size: 14px;
+        padding: 20px 15px;
+    }
+
+    .community-amenities .enquire-btn {
+        margin-top: 120px;
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .community-amenities h2 {
+        font-size: 26px !important;
+    }
+
+    .community-amenities .image img {
+        height: 300px;
+    }
+
+    .carousel-wrapper {
+        min-height: 200px;
+    }
+}
+
+/* ===== GALLERY SECTION ===== */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid.gallery {
+        padding: 40px 0;
+    }
+
+    .container-fluid.gallery .text-center h1.mb-5 {
+        font-size: 26px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery .gallery-item {
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery .gallery-icon {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .gallery .gallery-icon .btn {
+        font-size: 16px;
+    }
+}
+
+/* ===== EMPOWERING COMMUNITIES SECTION ===== */
+@media (max-width: 1200px) {
+    .services-section .services-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .services-section .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section .services-hero-card {
+        height: 350px;
+    }
+
+    .services-section .services-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section .services-header h2 {
+        font-size: 28px !important;
+    }
+
+    .services-section .services-header p {
+        font-size: 16px !important;
+    }
+
+    .services-section .services-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section .service-card {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .services-section .service-card p {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section .services-header h2 {
+        font-size: 24px !important;
+    }
+
+    .services-section .service-card .icon svg,
+    .services-section .service-card .icon .icon-svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ===== LOCATION SECTION ===== */
+@media (max-width: 1200px) {
+    #location-section .container {
+        max-width: 1000px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .landmarks-box {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #location-section {
+        padding: 40px 20px;
+    }
+
+    #location-section .location-box h2,
+    #location-section .landmarks-box h3 {
+        font-size: 22px !important;
+    }
+
+    .location-box p {
+        font-size: 14px !important;
+    }
+
+    .location-box,
+    .landmarks-box {
+        padding: 25px;
+    }
+
+    .landmark-item {
+        padding: 12px;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .landmark-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .landmark-item h4 {
+        font-size: 14px !important;
+    }
+
+    .landmark-item p {
+        font-size: 11px !important;
+    }
+
+    #showLandmarksBtn {
+        padding: 10px 24px;
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #location-section .location-box h2,
+    #location-section .landmarks-box h3 {
+        font-size: 20px !important;
+    }
+
+    .location-box,
+    .landmarks-box {
+        padding: 20px;
+    }
+}
+
+/* ===== SALES FORM SECTION ===== */
+@media (max-width: 1200px) {
+    .sales-content {
+        gap: 30px;
+    }
+
+    .sales-left-alt {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .sales-form-section {
+        padding: 40px 15px;
+    }
+
+    .sales-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .sales-left-alt,
+    .sales-right-alt {
+        flex: 1 1 100%;
+    }
+
+    .sales-heading {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .project-block {
+        text-align: center;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sales-heading {
+        font-size: 28px;
+    }
+
+    .project-block h3 {
+        font-size: 18px;
+    }
+
+    .project-block p {
+        font-size: 14px;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+
+    .social-icons i {
+        font-size: 20px;
+    }
+
+    .form-container {
+        padding: 25px;
+    }
+
+    .form-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sales-form-section {
+        padding: 30px 10px;
+    }
+
+    .sales-left-alt {
+        padding: 25px 20px;
+    }
+
+    .sales-heading {
+        font-size: 24px;
+    }
+
+    .project-block h3 {
+        font-size: 16px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .cc-wrap {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .cc-select {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cc-menu {
+        width: 100%;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* ===== GENERAL CONTAINER FIXES ===== */
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1200px;
+        padding-inline: 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+        padding-inline: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding-inline: 1rem;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE FIXES ===== */
+@media (max-width: 900px) and (max-height: 500px) {
+    #hero {
+        height: 100vh;
+    }
+
+    .hero-content {
+        transform: translate(-50%, -50%) scale(0.85);
+    }
+
+    .hero-svg {
+        height: 6rem;
+        width: 5rem;
+    }
+}
+
+/* ===== EXTRA SMALL DEVICES ===== */
+@media (max-width: 360px) {
+    .heading-termina {
+        font-size: 16px;
+    }
+
+    .hero-content p {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-buttons a {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    .project-left h3,
+    .project-left p {
+        font-size: 14px;
+    }
+
+    .community-amenities h2 {
+        font-size: 22px !important;
+    }
+
+    .animated-boxes .box-item {
+        font-size: 12px;
+        padding: 15px 10px;
+    }
+
+    .sales-heading {
+        font-size: 20px;
+    }
+}
+
+/* ===== TABLET SPECIFIC FIXES ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero-svg {
+        left: auto;
+        right: 2rem;
+        transform: none;
+    }
+
+    .services-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== LARGE DESKTOP ===== */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+
+    #project-section .container {
+        max-width: 1800px;
+    }
+
+    .hero-svg {
+        left: 90rem;
+    }
+
+    .heading-termina {
+        font-size: 36px;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+
+    .hero-buttons,
+    .know-more-btn,
+    .enquire-btn,
+    .submit-btn,
+    #showLandmarksBtn,
+    .social-icons {
+        display: none;
+    }
+
+    .hero-svg {
+        position: static;
+    }
+}
