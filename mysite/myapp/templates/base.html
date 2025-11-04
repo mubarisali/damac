@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </head>
 
@@ -34,10 +35,7 @@
 
     <script src="{% static 'js/main.js' %}"></script>
 
-    <!-- Floating Contact Buttons -->
-   
-
-    <!-- Popup Contact Form -->
+    <!-- ================= POPUP CONTACT FORM ================= -->
     <div id="priceForm" class="popup-form">
         <div class="popup-content">
             <span class="close-btn" onclick="closeForm()">&times;</span>
@@ -76,7 +74,12 @@
         </div>
     </div>
 
+    <!-- ================= TOAST NOTIFICATION ================= -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- ================= STYLES ================= -->
     <style>
+        /* ===== Popup Form ===== */
         .popup-form {
             position: fixed;
             top: 0;
@@ -207,6 +210,54 @@
             transform: translateY(0);
         }
 
+        /* ===== Toast Notification ===== */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #333;
+            color: #fff;
+            padding: 14px 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(-10px);
+            z-index: 100000;
+            transition: all 0.4s ease;
+            max-width: 320px;
+            pointer-events: auto;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.success {
+            background: #27ae60;
+        }
+
+        .toast.error {
+            background: #e74c3c;
+        }
+
+        .toast .close-toast {
+            margin-left: auto;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #fff;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .toast .close-toast:hover {
+            opacity: 1;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 640px) {
             .popup-content {
@@ -220,34 +271,31 @@
         }
     </style>
 
+    <!-- ================= SCRIPTS ================= -->
     <script>
         function showForm() {
             const formElement = document.getElementById('priceForm');
             formElement.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
 
         function closeForm() {
             const formElement = document.getElementById('priceForm');
             formElement.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = '';
         }
 
-        // Close form when clicking outside the popup content
+        // Close form when clicking outside popup
         document.getElementById('priceForm').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeForm();
-            }
+            if (e.target === this) closeForm();
         });
 
         // Close form with Escape key
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeForm();
-            }
+            if (e.key === 'Escape') closeForm();
         });
 
-        // Handle form submission
+        // Form submission
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('contactForm');
 
@@ -255,30 +303,50 @@
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
 
-                    // Submit the form
                     fetch(form.action, {
                         method: 'POST',
                         body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        headers: { 'Accept': 'application/json' }
                     })
                         .then(response => {
                             if (response.ok) {
-                                alert('Thank you! Your message has been sent successfully. We will contact you soon.');
+                                showToast('Thank you! Your message has been sent successfully. We will contact you soon.', 'success');
                                 form.reset();
                                 closeForm();
                             } else {
-                                alert('Oops! There was a problem submitting your form. Please try again.');
+                                showToast('Oops! There was a problem submitting your form. Please try again.', 'error');
                             }
                         })
                         .catch(error => {
-                            alert('Oops! There was a problem submitting your form. Please try again.');
+                            showToast('Oops! There was a problem submitting your form. Please try again.', 'error');
                             console.error('Form submission error:', error);
                         });
                 });
             }
         });
+
+        // ===== Toast Notification Functions =====
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.className = `toast show ${type}`;
+            toast.innerHTML = `
+                <span>${message}</span>
+                <span class="close-toast" onclick="hideToast()">&times;</span>
+            `;
+
+            // Auto close after 4 seconds
+            setTimeout(() => {
+                hideToast();
+            }, 4000);
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('show');
+            setTimeout(() => {
+                toast.className = 'toast hidden';
+            }, 300);
+        }
     </script>
 
 </body>

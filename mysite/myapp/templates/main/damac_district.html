@@ -8,277 +8,23 @@
 {% block title %}DAMAC District{% endblock %}
 
 {% block content %}
-
 <!-- Hero Start -->
-<section id="hero" class="hero" style="background-image: url('{% static 'img/hero.webp' %}');">
-    <div class="hero-overlay">
-        <div class="hero-box">
-            <p class="overlap-label">DAMAC DISTRICT</p>
-            <h2 class="overlap-title">DAMAC DISTRICT WHERE LUXURY <br> MEETS TOMORROW</h2>
-            <h3 class="overlap-subtitle">TIMELESS ELEGANCE & DUBAI HILLS</h3>
+<section id="hero" class="hero">
+    <div class="hero-bg" style="background-image: url('{% static 'img/hero.webp' %}');"></div>
 
-            <div class="hero-buttons">
-                <a href="javascript:void(0);" class="btn-outline" onclick="showForm()">GET AN INSTANT CALL BACK</a>
-                <a href="javascript:void(0);" class="btn-outline" onclick="showForm()">
-                    <span class="icon">⬇</span> DOWNLOAD BROCHURE
-                </a>
-            </div>
+    <div class="hero-content">
+        <div class="hero-logo">
+            <img src="{% static 'img/damac-district[1].png' %}" alt="Hero Logo">
+        </div>
 
-            <p class="overlap-text">
-                A visionary district blending luxury homes, premium offices, and world-class amenities in the heart of
-                DAMAC Hills — where smart living meets refined design.
-            </p>
+        <div class="hero-buttons">
+            <a href="javascript:void(0);" class="btn-outline" onclick="showForm()">GET AN INSTANT CALL BACK</a>
+            <a href="javascript:void(0);" class="btn-outline" onclick="showForm()">
+                <span class="icon">⬇</span> DOWNLOAD BROCHURE
+            </a>
         </div>
     </div>
 </section>
-<style>
-      @font-face {
-        font-family: 'Termina';
-        src: url('https://fonts.cdnfonts.com/s/18544/TerminaTest-Bold.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    body, h1, h2, h3, h4, h5, h6, p, a, div, section, input, select, textarea, button, span {
-        font-family: 'Termina', sans-serif !important;
-    }
-    /* Hero Section Styling */
-    .hero {
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 80px 20px;
-    }
-
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.35);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .hero-box {
-        background: rgba(255, 255, 255, 0.22);
-        padding: 50px 60px;
-        border-radius: 16px;
-        max-width: 1200px;
-        width: 100%;
-        text-align: center;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        color: #000;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Typography */
-    .overlap-label {
-        font-size: 14px;
-        letter-spacing: 2px;
-        color: #555;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-        font-weight: 500;
-    }
-
-    .overlap-title {
-        font-family: 'Termina', 'Montserrat', 'Avenir Next', sans-serif;
-        font-size: 40px;
-        font-weight: 800;
-        margin-bottom: 10px;
-        line-height: 1.2;
-    }
-
-    .overlap-subtitle {
-        font-size: 18px;
-        font-weight: 400;
-        color: #000;
-        margin-bottom: 25px;
-        letter-spacing: 1px;
-    }
-
-    .overlap-text {
-        font-size: 15px;
-        line-height: 1.8;
-        color: #444;
-        margin-top: 20px;
-        font-weight: 500;
-    }
-
-    /* Buttons */
-    .hero-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-    }
-
-    .hero-buttons a {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 28px;
-        border-radius: 50px;
-        font-size: 1rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .btn-outline {
-        border: 2px solid #fff;
-        color: #000;
-        background: #fff;
-    }
-
-    .btn-outline:hover {
-        background: #d4af37;
-        color: #222222;
-        border: 2px solid var(--gold);
-    }
-
-    /* Responsive - Tablet */
-    @media (max-width: 1024px) {
-        .hero {
-            padding: 60px 20px;
-        }
-
-        .hero-box {
-            padding: 40px 30px;
-        }
-
-        .overlap-title {
-            font-size: 32px;
-        }
-
-        .overlap-subtitle {
-            font-size: 16px;
-        }
-    }
-
-    /* Responsive - Mobile */
-    @media (max-width: 768px) {
-        .hero {
-            height: auto;
-            min-height: 100vh;
-            padding: 40px 15px;
-        }
-
-        .hero-overlay {
-            padding: 15px;
-        }
-
-        .hero-box {
-            padding: 30px 20px;
-        }
-
-        .overlap-label {
-            font-size: 11px;
-            margin-bottom: 10px;
-        }
-
-        .overlap-title {
-            font-size: 22px;
-            line-height: 1.3;
-            margin-bottom: 12px;
-        }
-
-        .overlap-title br {
-            display: none;
-        }
-
-        .overlap-subtitle {
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .overlap-text {
-            font-size: 13px;
-            line-height: 1.6;
-            margin-top: 15px;
-        }
-
-        .hero-buttons {
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .hero-buttons a {
-            width: 100%;
-            justify-content: center;
-            padding: 12px 20px;
-            font-size: 0.9rem;
-        }
-    }
-
-    /* Responsive - Small Mobile */
-    @media (max-width: 480px) {
-        .hero {
-            padding: 30px 10px;
-            min-height: 100vh;
-        }
-
-        .hero-box {
-            padding: 25px 15px;
-        }
-
-        .overlap-label {
-            font-size: 10px;
-        }
-
-        .overlap-title {
-            font-size: 18px;
-        }
-
-        .overlap-subtitle {
-            font-size: 12px;
-        }
-
-        .overlap-text {
-            font-size: 12px;
-        }
-
-        .hero-buttons a {
-            padding: 10px 15px;
-            font-size: 0.85rem;
-        }
-
-        .btn-outline .icon {
-            font-size: 0.8rem;
-        }
-    }
-
-    /* Extra Small Devices */
-    @media (max-width: 375px) {
-        .hero {
-            padding: 25px 10px;
-        }
-
-        .hero-box {
-            padding: 20px 12px;
-        }
-
-        .overlap-title {
-            font-size: 16px;
-        }
-
-        .overlap-subtitle {
-            font-size: 11px;
-        }
-
-        .overlap-text {
-            font-size: 11px;
-        }
-    }
-</style>
 
 <!-- 🌇 Office Spaces Section Start -->
 <section id="office-spaces" class="office-section">
@@ -286,9 +32,9 @@
         <div class="office-header text-center">
             <h2 class="section-title">The ultimate destination to <br> live, work, and play</h2>
             <p class="section-subtitle">
-                Imagine a district built not just for today, but for the life you aspire. At the heart of <strong>DAMAC
-                    Hills</strong>,
-                <strong>DAMAC District</strong> blends luxury residences, modern offices, and world-class amenities into
+                Imagine a district built not just for today, but for the life you aspire. At the heart of DAMAC
+                    Hills,
+                DAMAC Distric blends luxury residences, modern offices, and world-class amenities into
                 one landmark destination.
                 From serene water retreats and yoga gardens to AI-powered gyms, padel courts, and private dining pods,
                 every detail is crafted to elevate life.
@@ -311,138 +57,6 @@
         </div>
     </div>
 </section>
-<!-- 🌇 Office Spaces Section End -->
-
-<!-- 🌇 Office Spaces CSS -->
-<style>
-    @font-face {
-        font-family: 'Termina';
-        src: url('https://fonts.cdnfonts.com/s/18544/TerminaTest-Bold.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    /* Office Section Styling */
-    .office-section {
-        padding: 80px 20px;
-        background: #e0f7ff;
-        position: relative;
-        overflow: hidden;
-        font-family: 'Termina', sans-serif;
-        /* Apply Termina globally */
-    }
-
-    .office-section::before {
-        content: "";
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 300px;
-        height: 300px;
-        background: rgba(218, 165, 32, 0.1);
-        border-radius: 50%;
-        filter: blur(80px);
-    }
-
-    .office-section .container {
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-    }
-
-    .section-title {
-        font-size: 2rem;
-        color: #222;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-family: 'Termina', sans-serif;
-        /* Explicit Termina */
-    }
-
-    .section-subtitle {
-        font-size: 32 px;
-        color: #555;
-        line-height: 1.9;
-        margin-bottom: 60px;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: justify;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .office-content {
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        gap: 40px;
-        flex-wrap: wrap;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .office-box {
-        background: #fff;
-        border-radius: 20px;
-        padding: 40px 30px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s ease;
-        flex: 1 1 320px;
-        max-width: 480px;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .office-box:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .office-box h3 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .office-box p {
-        font-size: 1.1rem;
-        color: #555;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .office-box span {
-        font-weight: 700;
-        color: #b89636;
-        font-family: 'Termina', sans-serif;
-    }
-
-    @media (max-width: 768px) {
-        .office-section {
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            text-align: left;
-        }
-
-        .office-box {
-            max-width: 100%;
-        }
-    }
-</style>
-
 
 <section id="community-amenities" class="community-amenities">
     <div class="container">
@@ -513,157 +127,11 @@
     </div>
 </section>
 
-<style>
-    @font-face {
-        font-family: 'Termina';
-        src: url('https://fonts.cdnfonts.com/s/18544/TerminaTest-Bold.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    /* ========== Layout ========== */
-    .community-amenities {
-        padding: 80px 20px;
-        background: radial-gradient(circle at top left, #f9fafb, #e9ecef);
-        display: flex;
-        justify-content: center;
-        font-family: 'Termina', sans-serif; /* Apply Termina globally */
-    }
-
-    .community-amenities .container {
-        display: flex;
-        align-items: center;
-        max-width: 1200px;
-        width: 100%;
-        gap: 60px;
-    }
-
-    .community-amenities .image img {
-        width: 100%;
-        max-width: 450px;
-        height: 550px;
-        border-radius: 24px;
-        object-fit: cover;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        transition: transform 0.6s ease;
-    }
-
-    .community-amenities .image img:hover {
-        transform: scale(1.03);
-    }
-
-    /* ========== Content ========== */
-    .community-amenities .content {
-        flex: 1;
-    }
-
-    .community-amenities h2 {
-        font-family: 'Termina', sans-serif;
-        font-size: 36px;
-        font-weight: 700;
-        color: #111;
-        margin-bottom: 20px;
-    }
-
-    .community-amenities p {
-        font-family: 'Termina', sans-serif;
-        color: #444;
-        font-size: 17px;
-        line-height: 1.7;
-        margin-bottom: 40px;
-    }
-
-    /* ========== Carousel ========== */
-    .carousel {
-        position: relative;
-        min-height: 200px;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .carousel-slide {
-        display: none;
-        flex-direction: column;
-        gap: 20px;
-        transition: opacity 0.8s ease, transform 0.8s ease;
-        transform: translateY(20px);
-        opacity: 0;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .carousel-slide.active {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .carousel-row {
-        display: flex;
-        gap: 20px;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .amenity-card {
-        flex: 1;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 25px;
-        font-weight: 600;
-        color: #222;
-        text-align: center;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .amenity-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    /* ========== Responsive ========== */
-    @media (max-width: 900px) {
-        .community-amenities {
-            padding: 60px 20px;
-        }
-
-        .community-amenities .container {
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .community-amenities .image img {
-            max-width: 100%;
-            height: 400px;
-        }
-
-        .carousel-row {
-            flex-direction: column;
-        }
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const slides = document.querySelectorAll('.carousel-slide');
-        let idx = 0;
-        slides[idx].classList.add('active');
-
-        setInterval(() => {
-            slides[idx].classList.remove('active');
-            idx = (idx + 1) % slides.length;
-            slides[idx].classList.add('active');
-        }, 2000);
-    });
-</script>
-
 <!-- 🖼️ Gallery Start -->
 <div id="gallery" class="modern-gallery">
     <div class="gallery-container">
         <div class="gallery-title">
             <h2 class="section-title">Live without limits at DAMAC District <br> the new pulse of DAMAC Hills</h2>
-            
         </div>
 
         <!-- ✅ GALLERY GRID -->
@@ -696,254 +164,6 @@
     <img id="popupImg" src="" alt="">
     <div class="popup-label" id="popupLabel"></div>
 </div>
-
-
-<!-- 🖼️ Gallery End -->
-<style>
-    @font-face {
-        font-family: 'Termina';
-        src: url('https://fonts.cdnfonts.com/s/18544/TerminaTest-Bold.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    /* ========== BASE STYLES ========== */
-    .modern-gallery {
-        background: #ffffff;
-        padding: 80px 20px;
-        overflow: hidden;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .gallery-container {
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .gallery-title {
-        text-align: center;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .gallery-title h2 {
-        font-family: 'Termina', sans-serif;
-        font-size: 36 px;
-        font-weight: 700;
-        color: #111;
-        margin-bottom: 1rem;
-    }
-
-    .gallery-title p {
-        font-family: 'Termina', sans-serif;
-        color: #555;
-        font-size: 1.1rem;
-        max-width: 680px;
-        margin: 0 auto 4rem auto;
-        line-height: 1.8;
-    }
-
-    /* ========== GRID ========== */
-    .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-auto-rows: 260px;
-        gap: 25px;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .gallery-item {
-        position: relative;
-        border-radius: 18px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-        font-family: 'Termina', sans-serif;
-    }
-
-    .gallery-item.large {
-        grid-row: span 2;
-    }
-
-    .gallery-item.wide {
-        grid-column: span 2;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.9);
-        transition: all 0.8s ease;
-    }
-
-    .gallery-item:hover img {
-        transform: scale(1.15);
-        filter: brightness(1) contrast(1.05);
-    }
-
-    .gallery-item::after {
-        content: attr(data-label);
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        font-family: 'Termina', sans-serif;
-        font-weight: 600;
-        background: rgba(255, 255, 255, 0.9);
-        color: #222;
-        padding: 8px 16px;
-        font-size: 0.9rem;
-        border-radius: 30px;
-        opacity: 0;
-        transform: translateY(15px);
-        transition: all 0.4s ease;
-    }
-
-    .gallery-item:hover::after {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .gallery-item:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 25px 35px rgba(0, 0, 0, 0.15);
-    }
-
-    /* ========== POPUP STYLES ========== */
-    .gallery-popup {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        animation: fadeIn 0.3s ease;
-        padding: 20px;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .gallery-popup img {
-        max-width: 90%;
-        max-height: 80%;
-        border-radius: 10px;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-        margin-bottom: 1rem;
-        object-fit: contain;
-    }
-
-    .popup-label {
-        color: #fff;
-        font-family: 'Termina', sans-serif;
-        font-weight: 600;
-        font-size: 1.2rem;
-        background: rgba(255, 255, 255, 0.15);
-        padding: 10px 25px;
-        border-radius: 25px;
-        text-align: center;
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 40px;
-        right: 60px;
-        font-size: 2rem;
-        color: #fff;
-        cursor: pointer;
-        transition: 0.3s;
-        z-index: 10000;
-        font-family: 'Termina', sans-serif;
-    }
-
-    .close-btn:hover {
-        color: #ffcc00;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .modern-gallery {
-            padding: 60px 20px;
-        }
-
-        .gallery-title h2 {
-            font-size: 2rem;
-        }
-
-        .gallery-grid {
-            grid-template-columns: 1fr;
-            grid-auto-rows: 250px;
-            gap: 20px;
-        }
-
-        .gallery-item.large {
-            grid-row: span 1;
-        }
-
-        .gallery-item.wide {
-            grid-column: span 1;
-        }
-
-        .gallery-popup {
-            padding: 15px;
-        }
-
-        .gallery-popup img {
-            max-width: 95%;
-            max-height: 75%;
-        }
-
-        .popup-label {
-            font-size: 1rem;
-            padding: 8px 20px;
-        }
-
-        .close-btn {
-            right: 20px;
-            top: 20px;
-            font-size: 1.5rem;
-        }
-    }
-</style>
-
-
-<script>
-    /* ✅ JavaScript for Popup */
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const popup = document.getElementById('galleryPopup');
-    const popupImg = document.getElementById('popupImg');
-    const popupLabel = document.getElementById('popupLabel');
-    const closePopup = document.getElementById('closePopup');
-
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const imgSrc = item.querySelector('img').src;
-            const label = item.getAttribute('data-label');
-            popupImg.src = imgSrc;
-            popupLabel.textContent = label;
-            popup.style.display = 'flex';
-        });
-    });
-
-    closePopup.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-
-    popup.addEventListener('click', e => {
-        if (e.target === popup) popup.style.display = 'none';
-    });
-</script>
 
 <section id="location-section" style="background-image: url('{% static 'img/location.jpeg' %}');">
     <div class="overlay"></div>
@@ -985,7 +205,7 @@
 
         <!-- Right Box: Landmarks -->
         <div class="landmarks-box show">
-            <h3 style="font-size: 32px;">FAMOUS LANDMARKS NEARBY</h3>
+            <h3>FAMOUS LANDMARKS NEARBY</h3>
 
             <div class="landmark-item">
                 <img src="{% static 'img/burj-al-arab.svg' %}" alt="">
@@ -1031,12 +251,459 @@
 </section>
 
 <style>
-    #location-section,
-    #location-section * {
-        font-family: 'Termina', 'Montserrat', 'Avenir Next', 'Futura', 'Helvetica Neue', Arial, sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    /* ========== GLOBAL FONT SETTINGS ========== */
+    body,
+    div,
+    section,
+    input,
+    select,
+    textarea,
+    button,
+    span,
+    p,
+    a {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
     }
 
-    /* Section Background */
+    /* All headings use Futura with font-weight 200 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .section-title {
+        font-family: 'Futura', 'Roboto', sans-serif !important;
+        font-weight: 200 !important;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: smoothZoom 18s ease-in-out infinite alternate;
+        z-index: 1;
+    }
+
+    @keyframes smoothZoom {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1.15);
+        }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .hero-logo {
+        margin-bottom: 30px;
+        text-align: center;
+        animation: fadeInDown 1.5s ease;
+    }
+
+    .hero-logo img {
+        width: 400px;
+        max-width: 90%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .hero-buttons a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-size: 1rem;
+
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline {
+        border: 2px solid #fff;
+        color: #000;
+        background: #fff;
+    }
+
+    .btn-outline:hover {
+        background: #d4af37;
+        color: #222222;
+        border: 2px solid #d4af37;
+    }
+
+    /* ========== OFFICE SECTION ========== */
+    .office-section {
+        padding: 80px 20px;
+        background: #e0f7ff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .office-section::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background: rgba(218, 165, 32, 0.1);
+        border-radius: 50%;
+        filter: blur(80px);
+    }
+
+    .office-section .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title {
+        font-size: 32px;
+        color: #222;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #222222;
+        line-height: 1.8;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .office-content {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .office-box {
+        background: #fff;
+        border-radius: 20px;
+        padding: 40px 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        flex: 1 1 320px;
+        max-width: 480px;
+    }
+
+    .office-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .office-box h3 {
+        font-size: 1.6rem;
+        color: #000;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .office-box p {
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .office-box span {
+        font-weight: 700;
+        color: #b89636;
+    }
+
+    /* ========== COMMUNITY AMENITIES ========== */
+    .community-amenities {
+        padding: 80px 20px;
+        background: radial-gradient(circle at top left, #f9fafb, #e9ecef);
+        display: flex;
+        justify-content: center;
+    }
+
+    .community-amenities .container {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+        gap: 60px;
+    }
+
+    .community-amenities .image img {
+        width: 100%;
+        max-width: 450px;
+        height: 550px;
+        border-radius: 24px;
+        object-fit: cover;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transition: transform 0.6s ease;
+    }
+
+    .community-amenities .image img:hover {
+        transform: scale(1.03);
+    }
+
+    .community-amenities .content {
+        flex: 1;
+    }
+
+    .community-amenities h2 {
+        font-size: 36px;
+        color: #111;
+        margin-bottom: 20px;
+    }
+
+    .community-amenities p {
+        font-size: 1.2rem;
+        color: #222222;
+        line-height: 1.8;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+    }
+
+    .carousel {
+        position: relative;
+        min-height: 200px;
+    }
+
+    .carousel-slide {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    .carousel-slide.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .carousel-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .amenity-card {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 25px;
+        font-weight: 600;
+        color: #222;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .amenity-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ========== GALLERY ========== */
+    .modern-gallery {
+        background: #ffffff;
+        padding: 80px 20px;
+        overflow: hidden;
+    }
+
+    .gallery-container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .gallery-title {
+        text-align: center;
+    }
+
+    .gallery-title h2 {
+        font-size: 36px;
+        color: #111;
+        margin-bottom: 1rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 260px;
+        gap: 25px;
+    }
+
+    .gallery-item {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.9);
+        transition: all 0.8s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.15);
+        filter: brightness(1) contrast(1.05);
+    }
+
+    .gallery-item::after {
+        content: attr(data-label);
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.9);
+        color: #222;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-radius: 30px;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.4s ease;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-popup {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        animation: fadeIn 0.3s ease;
+        padding: 20px;
+    }
+
+    .gallery-popup img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+        object-fit: contain;
+    }
+
+    .popup-label {
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.2rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 10px 25px;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 40px;
+        right: 60px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 10000;
+    }
+
+    .close-btn:hover {
+        color: #ffcc00;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* ========== LOCATION SECTION ========== */
     #location-section {
         position: relative;
         background-size: cover;
@@ -1051,7 +718,6 @@
         background: rgba(255, 255, 255, 0.92);
     }
 
-    /* Grid Layout */
     #location-section .container {
         position: relative;
         z-index: 2;
@@ -1063,7 +729,6 @@
         align-items: start;
     }
 
-    /* Left and Right Boxes */
     .location-box,
     .landmarks-box {
         background: transparent;
@@ -1073,24 +738,21 @@
         box-shadow: none;
     }
 
-    /* Headings */
     .location-box h2,
     .landmarks-box h3 {
-        font-size: 32 px;
-        font-weight: 700;
+        font-size: 32px;
         color: #222222;
         margin-bottom: 24px;
     }
 
-    /* Paragraphs */
     .location-box p {
-        line-height: 1.7;
-        font-size: 16px;
-        color: #222;
-        margin-bottom: 14px;
+        line-height: 1.9;
+        font-size: 1.1rem;
+        color: #333333;
+        margin-bottom: 1.6rem;
+        text-align: justify;
     }
 
-    /* Landmarks List */
     .landmark-item {
         display: flex;
         align-items: center;
@@ -1123,11 +785,35 @@
     .landmark-item p {
         font-size: 12px;
         color: #777;
-        font-weight: 400;
+        margin-bottom: 0;
     }
 
-    /* Responsive Design */
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+        .hero-content {
+            padding: 60px 20px;
+        }
+    }
+
     @media (max-width: 900px) {
+        .community-amenities {
+            padding: 60px 20px;
+        }
+
+        .community-amenities .container {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .community-amenities .image img {
+            max-width: 100%;
+            height: 400px;
+        }
+
+        .carousel-row {
+            flex-direction: column;
+        }
+
         #location-section {
             padding: 60px 20px;
         }
@@ -1142,14 +828,169 @@
             padding: 20px;
         }
     }
+
+    @media (max-width: 768px) {
+        .hero {
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            padding: 40px 15px;
+        }
+
+        .hero-logo {
+            margin-bottom: 40px;
+        }
+
+        .hero-logo img {
+            width: 160px;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 0;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .hero-buttons a {
+            width: 100%;
+            justify-content: center;
+            padding: 14px 20px;
+            font-size: 0.95rem;
+        }
+
+        .office-section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .office-box {
+            max-width: 100%;
+        }
+
+        .modern-gallery {
+            padding: 60px 20px;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+            grid-auto-rows: 250px;
+            gap: 20px;
+        }
+
+        .gallery-popup {
+            padding: 15px;
+        }
+
+        .gallery-popup img {
+            max-width: 95%;
+            max-height: 75%;
+        }
+
+        .popup-label {
+            font-size: 1rem;
+            padding: 8px 20px;
+        }
+
+        .close-btn {
+            right: 20px;
+            top: 20px;
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content {
+            padding: 30px 15px;
+        }
+
+        .hero-logo img {
+            width: 180px;
+        }
+
+        .hero-buttons {
+            max-width: 300px;
+        }
+
+        .hero-buttons a {
+            padding: 12px 18px;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline .icon {
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .hero-content {
+            padding: 25px 12px;
+        }
+
+        .hero-logo img {
+            width: 160px;
+        }
+
+        .hero-buttons a {
+            padding: 11px 16px;
+            font-size: 0.85rem;
+        }
+    }
 </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Carousel functionality
+        const slides = document.querySelectorAll('.carousel-slide');
+        let idx = 0;
+        slides[idx].classList.add('active');
 
+        setInterval(() => {
+            slides[idx].classList.remove('active');
+            idx = (idx + 1) % slides.length;
+            slides[idx].classList.add('active');
+        }, 2000);
 
-<section id="sales-form-section" class="contact-section">
+        // Gallery popup functionality
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const popup = document.getElementById('galleryPopup');
+        const popupImg = document.getElementById('popupImg');
+        const popupLabel = document.getElementById('popupLabel');
+        const closePopup = document.getElementById('closePopup');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                const label = item.getAttribute('data-label');
+                popupImg.src = imgSrc;
+                popupLabel.textContent = label;
+                popup.style.display = 'flex';
+            });
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        popup.addEventListener('click', e => {
+            if (e.target === popup) popup.style.display = 'none';
+        });
+    });
+</script>
+
+<section id="contact" class="contact-section">
     <div class="contact-container">
-
-        <!-- LEFT SIDE -->
+        <!-- LEFT SIDE WITH IMAGE -->
         <div class="contact-left">
             <div class="contact-left-content">
                 <h2>Book Your Dream Apartment Today</h2>
@@ -1157,10 +998,9 @@
             </div>
         </div>
 
-        <!-- RIGHT SIDE -->
+        <!-- RIGHT SIDE (FORM) -->
         <div class="contact-right">
             <form class="lead-form" action="https://api.web3forms.com/submit" method="post">
-                {% csrf_token %}
                 <input type="hidden" name="access_key" value="6ba4ddc2-a6f7-4330-848d-1eb2d72a5cdc">
 
                 <div class="form-group">
@@ -1220,63 +1060,102 @@
 </script>
 
 <style>
-    @font-face {
-        font-family: 'Termina';
-        src: url('https://fonts.cdnfonts.com/s/18544/TerminaTest-Bold.woff') format('woff');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    /* ========== GLOBAL FONT SETTINGS ========== */
+    body,
+    div,
+    section,
+    input,
+    select,
+    textarea,
+    button,
+    span,
+    label,
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+
+    /* All headings use Futura with font-weight 200 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Futura', 'Roboto', sans-serif !important;
+        font-weight: 200 !important;
     }
 
     .contact-section {
         background: linear-gradient(120deg, #f8f9fb, #eef1f7);
-        padding: 80px 20px;
-        font-family: 'Termina', sans-serif;
-         margin-bottom: 0;
-    padding-bottom: 80px;
+        padding: 40px 20px;
     }
 
     .contact-container {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        gap: 60px;
-        max-width: 1200px;
+        gap: 0;
+        max-width: 1400px;
         width: 100%;
         margin: 0 auto;
         background: #fff;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        padding: 50px;
+        overflow: hidden;
     }
 
-    /* LEFT SIDE */
+    /* LEFT SIDE WITH IMAGE */
     .contact-left {
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+        background-image: url('{% static "img/handshake.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        min-height: 500px;
+    }
+
+    .contact-left::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
     }
 
     .contact-left-content {
         max-width: 400px;
+        position: relative;
+        z-index: 2;
+        padding: 30px;
     }
 
     .contact-left-content h2 {
         font-size: 34px;
-        font-weight: 700;
-        color: #111;
+        color: #fff;
         margin-bottom: 15px;
         line-height: 1.3;
     }
 
     .contact-left-content p {
         font-size: 16px;
-        color: #555;
+        color: #f0f0f0;
         margin-bottom: 0;
     }
 
     /* RIGHT SIDE (FORM) */
     .contact-right {
         flex: 1;
+        padding: 50px;
     }
 
     .form-group {
@@ -1300,7 +1179,6 @@
         border-radius: 8px;
         font-size: 14px;
         transition: all 0.3s ease;
-        font-family: 'Termina', sans-serif;
     }
 
     .lead-form input:focus,
@@ -1328,7 +1206,6 @@
         border: 2px solid #222222;
         border-radius: 8px;
         font-weight: 700;
-        font-family: 'Termina', sans-serif;
         transition: all 0.3s ease;
         cursor: pointer;
         margin-top: 10px;
@@ -1336,7 +1213,7 @@
 
     .submit-btn:hover {
         background: #d4af37;
-        border: 2px solid var(--gold);
+        border: 2px solid #d4af37;
     }
 
     @media (max-width: 900px) {
@@ -1346,7 +1223,6 @@
 
         .contact-container {
             flex-direction: column;
-            padding: 40px 25px;
             text-align: center;
         }
 
@@ -1355,8 +1231,16 @@
             width: 100%;
         }
 
+        .contact-left {
+            min-height: 300px;
+        }
+
+        .contact-right {
+            padding: 40px 25px;
+        }
+
         .contact-left-content {
-            margin-bottom: 30px;
+            margin-bottom: 0;
         }
 
         .contact-left-content h2 {
@@ -1368,6 +1252,7 @@
         }
     }
 </style>
+
 
 <!-- js for reset the form -->
 <script>
