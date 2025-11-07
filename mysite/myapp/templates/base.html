@@ -270,6 +270,134 @@
             }
         }
     </style>
+<!-- ================= FLOATING CONTACT WIDGET ================= -->
+<div class="contact-widget" id="contactWidget">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+971564227853" target="_blank" class="contact-link whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Gmail Compose Button -->
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@parvarealty.ae&su=Property%20Inquiry" target="_blank"
+        class="contact-link email" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+        <span>Email</span>
+    </a>
+</div>
+
+<style>
+    /* ===== Modern Floating Contact Widget ===== */
+    .contact-widget {
+        position: fixed;
+        top: 50%;
+        right: 25px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 20px;
+        padding: 14px 10px;
+        z-index: 9999;
+        animation: fadeIn 0.8s ease forwards;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50%) translateX(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+    }
+
+    .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: white;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 10px 14px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        width: 52px;
+        justify-content: center;
+    }
+
+    .contact-link i {
+        font-size: 1.4rem;
+        flex-shrink: 0;
+    }
+
+    /* WhatsApp Gradient */
+    .contact-link.whatsapp {
+        background: linear-gradient(135deg, #25D366, #128C7E);
+    }
+
+    /* Email (Gmail) Gradient */
+    .contact-link.email {
+        background: linear-gradient(135deg, #f1c40f, #c7901f);
+    }
+
+    /* Hover expands to show text */
+    .contact-link:hover {
+        width: 140px;
+        justify-content: flex-start;
+        padding-left: 16px;
+    }
+
+    .contact-link:hover span {
+        opacity: 1;
+        width: auto;
+        margin-left: 8px;
+    }
+
+    .contact-link span {
+        opacity: 0;
+        width: 0;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    /* Hide inside hero section */
+    .hero-active .contact-widget {
+        display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .contact-widget {
+            right: 10px;
+            padding: 10px 8px;
+            gap: 10px;
+        }
+
+        .contact-link {
+            width: 46px;
+            height: 46px;
+        }
+
+        .contact-link:hover {
+            width: 46px;
+        }
+
+        .contact-link span {
+            display: none;
+        }
+    }
+</style>
+
 
     <!-- ================= SCRIPTS ================= -->
     <script>
@@ -347,6 +475,21 @@
                 toast.className = 'toast hidden';
             }, 300);
         }
+
+       document.addEventListener('scroll', function () {
+            const hero = document.querySelector('.hero');
+            const widget = document.querySelector('.contact-widget');
+            if (!hero || !widget) return;
+
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            if (window.scrollY < heroBottom - 100) {
+                document.body.classList.add('hero-active');
+            } else {
+                document.body.classList.remove('hero-active');
+            }
+        });
+        
+
     </script>
 
 </body>
